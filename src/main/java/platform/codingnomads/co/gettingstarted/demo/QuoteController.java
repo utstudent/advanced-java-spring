@@ -17,7 +17,7 @@ public class QuoteController {
         // Get a random quote from the service.
         String quote = quoteService.getRandomQuote();
 
-        // Attach that quote to the data model
+        // Attach that quote to the data model.
         model.addAttribute("quote", quote);
 
         // Return the view "getting_started/quote.html"
