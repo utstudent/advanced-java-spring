@@ -14,7 +14,7 @@ public class QuoteController {
     // The path your endpoint will be mapped to (http://localhost:8080/quote)
     @GetMapping("/quote")
     public String quote (Model model) {
-        // Get a random quote from the service.
+        // Get a random quote from the service..
         String quote = quoteService.getRandomQuote();
 
         // Attach that quote to the data model.
