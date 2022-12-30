@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class QuoteController {
 
-    // "inject" a bean of the QuoteService into this class.
+    // "inject" a bean of the QuoteService into this class..
     @Autowired
     QuoteService quoteService;
 
