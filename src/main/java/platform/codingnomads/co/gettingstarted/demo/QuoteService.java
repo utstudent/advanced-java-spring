@@ -7,7 +7,7 @@ public class QuoteService {
     // create an empty array to hold the quotes
     private String[] quotes = new String[10];
 
-    // constructor that will populate the quotes in the array
+    // constructor that will populate the quotes in the array.
     public QuoteService(){
         populateQuotes();
     }
