@@ -47,6 +47,7 @@ dependencies {
 //    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.28.Final'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.testng:testng:7.1.0'
 
     runtimeOnly 'mysql:mysql-connector-java'
 

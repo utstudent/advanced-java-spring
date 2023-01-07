@@ -17,4 +17,14 @@ public class LaptopConfiguration {
     public OS os() {
         return new OS("ubuntu");
     }
+
+    @Bean
+    public RAM ram() {
+        return new RAM("Corsair", 16);
+    }
+
+    @Bean
+    public GPU gpu() {
+        return new GPU("NVIDIA GeForce RTX 3060", 12);
+    }
 }
