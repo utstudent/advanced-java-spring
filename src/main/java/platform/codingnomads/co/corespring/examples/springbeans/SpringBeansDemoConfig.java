@@ -11,4 +11,8 @@ public class SpringBeansDemoConfig {
     public Address address() {
         return new Address("Main Street", 1500);
     }
+    @Bean
+    public Background background() {
+        return new Background("Senior Developer", 6);
+    }
 }

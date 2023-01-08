@@ -15,4 +15,5 @@ public class Address {
         this.street = street;
         this.streetNumber = streetNumber;
     }
+
 }

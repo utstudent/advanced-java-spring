@@ -8,10 +8,12 @@ import org.springframework.stereotype.Component;
 @Setter
 @Component
 public class SpringDeveloper {
-
     private Address address;
+    private Background background;
 
-    public SpringDeveloper(Address address) {
+    public SpringDeveloper(Address address, Background background) {
+
         this.address = address;
+        this.background = background;
     }
 }
