@@ -18,5 +18,11 @@
         <property name="name" value="OpenJDK"/>
         <property name="version" value="11"/>
     </bean>
+    <bean id="computer" class="platform.codingnomads.co.corespring.examples.application_context.xml.Computer">
+        <property name="brand" value="MSI"/>
+    </bean>
+    <bean id="os" class="platform.codingnomads.co.corespring.examples.application_context.xml.OS">
+        <property name="OSName" value="Windows 11"/>
+    </bean>
 
 </beans>
