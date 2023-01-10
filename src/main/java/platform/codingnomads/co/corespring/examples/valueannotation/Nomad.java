@@ -36,6 +36,9 @@ public class Nomad {
     @Value("#{${database.values}}")
     private Map<String, String> databaseValues;
 
+    @Value("${spring.datasource.url}")
+    private String logLevel;
+
     public String nomadIdentity() {
         return name.concat(" ").concat(age.toString());
     }
@@ -54,5 +57,13 @@ public class Nomad {
 
     public Map<String, String> getDatabaseValues() {
         return databaseValues;
+    }
+
+    public String getLogLevel(){
+        return logLevel;
+    }
+
+    public String sayHi(){
+        return "Hello!";
     }
 }

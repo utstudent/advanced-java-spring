@@ -1,8 +1,9 @@
 package platform.codingnomads.co.corespring.examples.primaryannotation;
 
-import org.springframework.context.annotation.Primary;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
 
-@Component
-public class GeForce implements VideoCard {
+@Component("amd")
+@ToString
+public class AMD implements Motherboard {
 }

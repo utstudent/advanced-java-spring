@@ -10,6 +10,7 @@ public class DependsOnDemo {
         ctx.register(DependsOnDemoConfig.class);
         ctx.refresh();
         final SpringDeveloper springDeveloper = ctx.getBean(SpringDeveloper.class);
+        final IDE ide = ctx.getBean(IDE.class);
         ctx.close();
     }
 }
