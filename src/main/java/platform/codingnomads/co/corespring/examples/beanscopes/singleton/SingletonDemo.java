@@ -16,11 +16,11 @@ public class SingletonDemo {
         SpringBean springBean2 = ctx.getBean(SpringBean.class);
         System.out.println("Hash code: " + springBean2.hashCode());
 
-        SpringBean springBean3 = ctx.getBean(SpringBean.class);
-        System.out.println("Hash code: " + springBean3.hashCode());
-
-        SpringBean springBean4 = ctx.getBean(SpringBean.class);
-        System.out.println("Hash code: " + springBean4.hashCode());
+//        SpringBean springBean3 = ctx.getBean(SpringBean.class);
+//        System.out.println("Hash code: " + springBean3.hashCode());
+//
+//        SpringBean springBean4 = ctx.getBean(SpringBean.class);
+//        System.out.println("Hash code: " + springBean4.hashCode());
 
         ctx.close();
     }
