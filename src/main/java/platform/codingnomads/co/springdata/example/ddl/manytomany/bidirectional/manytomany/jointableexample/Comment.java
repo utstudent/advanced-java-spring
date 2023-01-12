@@ -1,9 +1,10 @@
-package platform.codingnomads.co.springdata.example.ddl.manytoone.unidirectional.usingonetomany;
+package platform.codingnomads.co.springdata.example.ddl.manytomany.bidirectional.manytomany.jointableexample;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
@@ -20,8 +21,4 @@ public class Comment {
 
     @Column(nullable = false)
     private String content;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "comment_id")
-    private List<Like> likes;
 }

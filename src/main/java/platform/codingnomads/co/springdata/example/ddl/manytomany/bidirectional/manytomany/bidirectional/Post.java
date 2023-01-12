@@ -1,6 +1,8 @@
-package platform.codingnomads.co.springdata.example.ddl.manytomany.bidirectional;
+package platform.codingnomads.co.springdata.example.ddl.manytomany.bidirectional.manytomany.bidirectional;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;

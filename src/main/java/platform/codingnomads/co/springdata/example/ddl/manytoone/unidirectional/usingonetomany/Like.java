@@ -1,6 +1,8 @@
-package platform.codingnomads.co.springdata.example.ddl.manytomany.bidirectional;
+package platform.codingnomads.co.springdata.example.ddl.manytoone.unidirectional.usingonetomany;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -8,8 +10,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Comment {
-
+@Table(name = "likes")
+public class Like {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,6 +19,4 @@ public class Comment {
     @Column(nullable = false, updatable = false)
     private String username;
 
-    @Column(nullable = false)
-    private String content;
 }

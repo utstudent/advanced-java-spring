@@ -1,4 +1,4 @@
-package platform.codingnomads.co.springdata.example.ddl.manytomany.unidirectional;
+package platform.codingnomads.co.springdata.example.ddl.manytomany.bidirectional.manytomany.bidirectional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

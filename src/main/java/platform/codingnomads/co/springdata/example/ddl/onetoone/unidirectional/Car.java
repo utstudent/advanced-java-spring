@@ -21,4 +21,7 @@ public class Car {
     @Column(name = "horsepower")
     private String horsepower;
 
+    @OneToOne
+    private Engine engine;
+
 }
