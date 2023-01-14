@@ -20,15 +20,18 @@ public class JpaRepoDemo implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        SoftDrink fanta = SoftDrink.builder().name("Fanta").rating(10).build();
+        SoftDrink fanta = SoftDrink.builder().name("Fanta").rating(2).build();
         SoftDrink coke = SoftDrink.builder().name("Coca-Cola").rating(4).build();
         SoftDrink drPepper = SoftDrink.builder().name("Dr. Pepper").rating(1).build();
+        SoftDrink OJ = SoftDrink.builder().name("Orange Juice").rating(9).build();
+        SoftDrink water = SoftDrink.builder().name("Water").rating(10).build();
 
         //save single entity instance
-        fanta = softDrinkRepo.save(fanta);
+        OJ = softDrinkRepo.save(OJ);
+        water = softDrinkRepo.save(water);
 
         //save multiple entity instances at a time
-        List<SoftDrink> insertedSoftDrinks = softDrinkRepo.saveAll(List.of(coke, drPepper));
+        List<SoftDrink> insertedSoftDrinks = softDrinkRepo.saveAll(List.of(coke, drPepper, fanta));
 
         //make sure all entities are actually saved to the database
         softDrinkRepo.flush();
@@ -54,6 +57,16 @@ public class JpaRepoDemo implements CommandLineRunner {
                 )
                 .forEach(System.out::println);
 
+        System.out.println("FINDING DRINKS WITH RATING 9 USING EXAMPLE");
+        softDrinkRepo.findAll(
+                        Example.of(
+                                //probe soft drink to match results with
+                                SoftDrink.builder().rating(9).build(),
+                                //ask that database entries that match any of the fields in the probe be returned
+                                ExampleMatcher.matchingAny())
+                )
+                .forEach(System.out::println);
+
         //create page request to paginate through these 3 soft drinks. note that the first page is indicated using a 0
         PageRequest pageRequest = PageRequest.of(0, 2);
 
@@ -68,6 +81,6 @@ public class JpaRepoDemo implements CommandLineRunner {
         page.getContent().forEach(System.out::println);
 
         //delete all 3 soft drinks in a batch
-        softDrinkRepo.deleteAllInBatch();
+        //softDrinkRepo.deleteAllInBatch();
     }
 }

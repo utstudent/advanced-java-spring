@@ -77,10 +77,13 @@ public class CodeWarriorApplication implements CommandLineRunner {
         final List<CodeWarrior> byLastNameOrderByFirstNameDesc = codeWarriorRepo.findByLastNameOrderByFirstNameDesc("java");
         byLastNameOrderByFirstNameDesc.forEach(System.out::println);
 
-
         System.out.println("***************************************************findByEmailAddress_EmailAddress***************************************************");
         final CodeWarrior byEmailAddress_emailAddress = codeWarriorRepo.findByEmailAddress_EmailAddress("java@ninja.com");
         System.out.println(byEmailAddress_emailAddress);
+
+//        System.out.println("***************************************************findByEmailAddress_EmailAddress***************************************************");
+//        final List<CodeWarrior> byEmailAddress = codeWarriorRepo.findByEmailAddress("spring@ninja.com");
+//        byEmailAddress_emailAddress.forEach(System.out::println);
 
     }
 }
