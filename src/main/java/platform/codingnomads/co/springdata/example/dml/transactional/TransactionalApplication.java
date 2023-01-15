@@ -37,7 +37,7 @@ public class TransactionalApplication implements CommandLineRunner {
         try {
             pointService.rollbackFor();
         } catch (IOException e) {
-            //do nothing... move on
+            //do nothing... move on.
         }
 
         try {

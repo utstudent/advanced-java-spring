@@ -10,6 +10,8 @@ public interface HouseRepo extends JpaRepository<House, Long> {
 
     List<House> findByAddressIsNot(String address);
 
+    List<House> findByAddressContaining(String address);
+
     List<House> findById(String address);
 
     List<House> findByBedroomNumIs(Integer bedroomNum);
@@ -20,9 +22,11 @@ public interface HouseRepo extends JpaRepository<House, Long> {
 
     List<House> findByYearBuiltGreaterThan(int yearBuilt);
 
-    List<House> findTop5ByBedroomNumGreaterThan(int bedroomNum);
+    List<House> findTop2ByBedroomNumGreaterThan(int bedroomNum);
 
     List<House> findByBathroomNumIs(int bathroomNum);
 
-    List<House> findByBathroomNumGreaterThan(int bathroomNum);
+    List<House> findByBathroomNumGreaterThanEqual(int bathroomNum);
+
+    List<House> findByBedroomNumGreaterThanAndBathroomNumGreaterThanEqual(int bedroomNum, int bathroomNum);
 }

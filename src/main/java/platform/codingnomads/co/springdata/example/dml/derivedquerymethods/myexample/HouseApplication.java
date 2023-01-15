@@ -34,8 +34,22 @@ public class HouseApplication implements CommandLineRunner {
         final List<House> findByBedroomNumGreaterThan = houseRepo.findByBedroomNumGreaterThan(2);
         findByBedroomNumGreaterThan.forEach(System.out::println);
 
-//        System.out.println("*******************findByBedroomNumGreaterThan******************");
-//        final List<House> findByBedroomNumGreaterThan = houseRepo.findByBedroomNumGreaterThan(2);
-//        findByBedroomNumGreaterThan.forEach(System.out::println);
+        System.out.println("*******************findByYearBuiltGreaterThan******************");
+        final List<House> findByYearBuiltGreaterThan = houseRepo.findByYearBuiltGreaterThan(1945);
+        findByYearBuiltGreaterThan.forEach(System.out::println);
+
+        System.out.println("*******************findByBathroomNumGreaterThanEqual******************");
+        final List<House> findByBathroomNumGreaterThanEqual = houseRepo.findByBathroomNumGreaterThanEqual(3);
+        findByBathroomNumGreaterThanEqual.forEach(System.out::println);
+
+        System.out.println("*******************findByAddressContaining******************");
+        final List<House> findByAddressContaining = houseRepo.findByAddressContaining("Texas");
+        findByAddressContaining.forEach(System.out::println);
+
+        System.out.println("*******************findByBedroomNumGreaterThanAndBathroomNumGreaterThanEqual******************");
+        final List<House> findByBedroomNumGreaterThanAndBathroomNumGreaterThanEqual = houseRepo.findByBedroomNumGreaterThanAndBathroomNumGreaterThanEqual(2,2);
+        findByBedroomNumGreaterThanAndBathroomNumGreaterThanEqual.forEach(System.out::println);
+
+        houseRepo.deleteAll();
     }
 }
