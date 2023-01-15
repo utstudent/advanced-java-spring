@@ -33,5 +33,9 @@ public class HouseApplication implements CommandLineRunner {
         System.out.println("*******************findByBedroomNumGreaterThan******************");
         final List<House> findByBedroomNumGreaterThan = houseRepo.findByBedroomNumGreaterThan(2);
         findByBedroomNumGreaterThan.forEach(System.out::println);
+
+//        System.out.println("*******************findByBedroomNumGreaterThan******************");
+//        final List<House> findByBedroomNumGreaterThan = houseRepo.findByBedroomNumGreaterThan(2);
+//        findByBedroomNumGreaterThan.forEach(System.out::println);
     }
 }
