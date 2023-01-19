@@ -86,7 +86,7 @@ public class SpringDataLab implements CommandLineRunner {
                     areaRepository.findByCode("L"));
             poi4.addRoutes(routeRepository.findAllByCodeContaining("L"));
 
-            // a poi can be associated with a route only, not a particular area (somewhere between 2 areas).
+            // a poi can be associated with a route only, not a particular area (somewhere between 2 areas)..
             PointOfInterest poi5 = new PointOfInterest("Roadside Attraction", "Ufo",
                     routeRepository.findByCode("B-A"));
             PointOfInterest poi6 = new PointOfInterest("Roadside Attraction", "Waterfall",
