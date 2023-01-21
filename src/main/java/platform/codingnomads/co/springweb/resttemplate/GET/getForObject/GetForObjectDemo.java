@@ -22,6 +22,7 @@ public class GetForObjectDemo {
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
+
         return builder.build();
     }
 
@@ -31,7 +32,7 @@ public class GetForObjectDemo {
             KanyeTemplate kanyeQuote = restTemplate.getForObject("https://api.kanye.rest/", KanyeTemplate.class);
             System.out.println(kanyeQuote.toString());
 
-            // submit more requests here
+            // submit more requests here.
             
 //            CodingNomadsTasksApiResponse response =
 //                    restTemplate.getForObject("http://demo.codingnomads.co:8080/tasks_api/users/5",
