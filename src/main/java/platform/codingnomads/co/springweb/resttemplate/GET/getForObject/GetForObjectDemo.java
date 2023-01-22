@@ -29,7 +29,7 @@ public class GetForObjectDemo {
             randomQuote = restTemplate.getForObject("https://zenquotes.io/api/random/", QuoteTemplate[].class);
             System.out.println(Arrays.toString(randomQuote));
 
-            // submit more requests here
+            // submit more requests here.
 
 //            CodingNomadsTasksApiResponse response =
 //                    restTemplate.getForObject("http://demo.codingnomads.co:8080/tasks_api/users/5",
