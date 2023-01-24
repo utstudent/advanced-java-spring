@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import platform.codingnomads.co.springweb.resttemplate.POST.models.ResponseObject;
 import platform.codingnomads.co.springweb.resttemplate.POST.models.Task;
+import platform.codingnomads.co.springweb.resttemplate.POST.models.User;
+import platform.codingnomads.co.springweb.resttemplate.POST.models.UserResponseObject;
 
 import java.util.Objects;
 
@@ -41,6 +43,23 @@ public class PostForEntityMain {
                 System.out.println(Objects.requireNonNull(responseEntity.getBody()));
             } else {
                 System.out.println(Objects.requireNonNull(responseEntity.getBody()).getError());
+            }
+
+            System.out.println("-------------------------------------------------------------------");
+            User newUser = User.builder()
+                    .email("helloMrNice2@gmail.com")
+                    .first_name("Nice")
+                    .last_name("man")
+                    .build();
+
+            ResponseEntity<UserResponseObject> userResponseEntity = restTemplate
+                    .postForEntity("http://demo.codingnomads.co:8080/tasks_api/users",newUser, UserResponseObject.class);
+
+
+            if (userResponseEntity.getStatusCode().equals(HttpStatus.CREATED)) {
+                System.out.println(Objects.requireNonNull(userResponseEntity.getBody()));
+            } else {
+                System.out.println(Objects.requireNonNull(userResponseEntity.getBody()).getError());
             }
         };
     }

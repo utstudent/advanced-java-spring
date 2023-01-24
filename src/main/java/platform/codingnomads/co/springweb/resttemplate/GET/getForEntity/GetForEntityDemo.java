@@ -31,17 +31,27 @@ public class GetForEntityDemo {
 
             if (responseEntity.getStatusCode().equals(HttpStatus.OK) && responseEntity.getBody() != null) {
                 QuoteTemplate[] quoteTemplate = responseEntity.getBody();
-                System.out.println(Arrays.toString(quoteTemplate));
+                System.out.println("random quote: "+Arrays.toString(quoteTemplate));
             } else {
                 System.out.println("Something went wrong! The response was not marked with status code 200");
             }
 
-            ResponseEntity<ActivityTemplate[]> activityResponseEntity =
-                    restTemplate.getForEntity("http://www.boredapi.com/api/activity/", ActivityTemplate[].class);
+            ResponseEntity<ActivityTemplate> activityResponseEntity =
+                    restTemplate.getForEntity("http://www.boredapi.com/api/activity/", ActivityTemplate.class);
 
             if (activityResponseEntity.getStatusCode().equals(HttpStatus.OK) && activityResponseEntity.getBody() != null) {
-                ActivityTemplate[] activityTemplate = activityResponseEntity.getBody();
-                System.out.println(Arrays.toString(activityTemplate));
+                ActivityTemplate activityTemplate = activityResponseEntity.getBody();
+                System.out.println("random activity: " + activityTemplate);
+            } else {
+                System.out.println("Something went wrong! The response was not marked with status code 200");
+            }
+
+            ResponseEntity<ActivityTemplate> twoParticipantsActivityResponseEntity =
+                    restTemplate.getForEntity("http://www.boredapi.com/api/activity?participants=2", ActivityTemplate.class);
+
+            if (twoParticipantsActivityResponseEntity.getStatusCode().equals(HttpStatus.OK) && twoParticipantsActivityResponseEntity.getBody() != null) {
+                ActivityTemplate activityTemplate = twoParticipantsActivityResponseEntity.getBody();
+                System.out.println("Two participants random activity: " + activityTemplate);
             } else {
                 System.out.println("Something went wrong! The response was not marked with status code 200");
             }

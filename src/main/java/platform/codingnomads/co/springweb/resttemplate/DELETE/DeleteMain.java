@@ -11,6 +11,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import platform.codingnomads.co.springweb.resttemplate.DELETE.models.ResponseObject;
 import platform.codingnomads.co.springweb.resttemplate.DELETE.models.Task;
+import platform.codingnomads.co.springweb.resttemplate.DELETE.models.User;
 
 @SpringBootApplication
 public class DeleteMain {
@@ -70,6 +71,12 @@ public class DeleteMain {
             } catch (HttpClientErrorException e) {
                 System.out.println(e.getMessage());
             }
+            System.out.println("**********************************************************************************************");
+
+            int taskIdToBeDeleted = 487;
+            restTemplate.delete("http://demo.codingnomads.co:8080/tasks_api/users/" + taskIdToBeDeleted);
+
+            
         };
     }
 }

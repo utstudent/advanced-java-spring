@@ -11,4 +11,5 @@ public class ActivityTemplate {
     private int participants;
     private double price;
 
+
 }
