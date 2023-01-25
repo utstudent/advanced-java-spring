@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import platform.codingnomads.co.springweb.returningdatatoclient.usingresponseentity.model.User;
+import platform.codingnomads.co.springweb.springrestcontrollers.shortcutannotations.model.Task;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 public class ResponseController {
@@ -29,7 +31,6 @@ public class ResponseController {
                 .header("TEST", "TEST HEADER")
                 .body(user);
     }
-
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUser(@PathVariable int id) {
         if (user.getId() == id ) {
@@ -38,4 +39,11 @@ public class ResponseController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/practice")
+    public ResponseEntity<?> practice() {
+        return ResponseEntity.ok().header("Header King", "King kong").body(user);
+
+    }
+
 }

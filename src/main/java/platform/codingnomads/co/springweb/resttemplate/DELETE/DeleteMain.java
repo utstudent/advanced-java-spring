@@ -76,7 +76,7 @@ public class DeleteMain {
             int taskIdToBeDeleted = 487;
             restTemplate.delete("http://demo.codingnomads.co:8080/tasks_api/users/" + taskIdToBeDeleted);
 
-            
+
         };
     }
 }
