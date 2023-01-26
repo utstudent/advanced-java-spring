@@ -48,5 +48,20 @@ public class TaskController {
     public String pathVariableIsNotEncoded(@PathVariable String name) {
         return name;
     }
+
+    @GetMapping(value = "/hello/{name}")
+    public Task practice1(@PathVariable(name = "name") String name, @RequestParam(name = "id", required = false) long taskId) {
+        return Task.builder().id(taskId).name(name).build();
+    }
+
+    @GetMapping(value = "/hola/{id}")
+    public Task practice2(@RequestParam(name = "name") String name, @PathVariable(name = "id") long taskId, @RequestParam(name = "completed") Boolean completed) {
+        return Task.builder().id(taskId).name(name).completed(completed).build();
+    }
+
+    @GetMapping(value = "/bonjour/{id}/{name}")
+    public Task practice3(@PathVariable(name = "name") String name, @PathVariable(name = "id") long taskId, @RequestParam(name = "completed",required = false) Boolean completed) {
+        return Task.builder().id(taskId).name(name).completed(completed).build();
+    }
 }
 
