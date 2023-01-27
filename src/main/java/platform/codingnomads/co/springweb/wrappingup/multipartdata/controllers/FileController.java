@@ -44,7 +44,7 @@ public class FileController {
                     .body(new ByteArrayResource(databaseFile.getData()));
         }
     }
-
+    //.
     @PutMapping("/uploadSingleFile/{id}")
     public ResponseEntity<?> updateFileById(@PathVariable(name = "id") Long fileId, @RequestBody MultipartFile file) {
 
