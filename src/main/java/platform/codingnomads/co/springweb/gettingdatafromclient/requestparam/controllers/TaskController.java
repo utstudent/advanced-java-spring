@@ -24,12 +24,11 @@ public class TaskController {
         return "ID: " + taskId;
     }
 
-    @GetMapping(value = "/request-param-optional",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/request-param-optional", produces = MediaType.APPLICATION_JSON_VALUE)
     public Task getTaskWithOptionalRequestPram(@RequestParam(name = "id", required = false) Long taskId) {
-        if (taskId != null){
+        if (taskId != null) {
             return Task.builder().id(taskId).name("Task One").build();
-        }
-        else
+        } else
             return Task.builder().name("Task One").build();
     }
 
@@ -46,17 +45,17 @@ public class TaskController {
     }
 
     @GetMapping(value = "/hello")
-    public Task taskPractice1(@RequestParam(name = "completed") boolean isCompleted, @RequestParam(name = "id") Long taskId){
+    public Task taskPractice1(@RequestParam(name = "completed") boolean isCompleted, @RequestParam(name = "id") Long taskId) {
         return Task.builder().id(taskId).name("Task One").completed(isCompleted).build();
     }
 
     @GetMapping(value = "/hola")
-    public Task taskPractice2(@RequestParam(name = "completed") boolean isCompleted, @RequestParam(name = "id") Long taskId, @RequestParam(name = "name") String thisName){
+    public Task taskPractice2(@RequestParam(name = "completed") boolean isCompleted, @RequestParam(name = "id") Long taskId, @RequestParam(name = "name") String thisName) {
         return Task.builder().id(taskId).name(thisName).completed(isCompleted).build();
     }
 
     @GetMapping(value = "/merhaba")
-    public Task taskPractice3(@RequestParam(name = "completed") boolean isCompleted){
+    public Task taskPractice3(@RequestParam(name = "completed") boolean isCompleted) {
         return Task.builder().name("Task One").completed(isCompleted).build();
     }
 }
