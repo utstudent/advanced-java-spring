@@ -12,3 +12,15 @@ strong {
 p {
     font-family: sans-serif;
 }
+
+weak {
+    font-weight: 700;
+    background-color: aqua;
+}
+
+test {
+    color: red;
+    font-family: verdana;
+    font-size: 100%;
+    background-color: teal;
+}

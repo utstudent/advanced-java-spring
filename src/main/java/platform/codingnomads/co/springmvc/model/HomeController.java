@@ -18,6 +18,10 @@ public class HomeController {
         model.addAttribute("name", "Developer");
         model.addAttribute("language", "Java");
         model.addAttribute("framework", "Spring");
+        model.addAttribute("experience", "1 year");
+        model.addAttribute("location", "Texas");
+        model.addAttribute("Bootcamp", "Coding Nomads");
+        model.addAttribute("open to remote", "yes");
         return "model-page";
     }
 
