@@ -24,7 +24,7 @@ public class TestingWebServices {
     public void helloShouldReturnDefaultMessage() throws Exception {
         //use mockMvc to start a request
         mockMvc
-                //.perform is used to indicate what mockMvc should do
+                //.perform is used to indicate what mockMvc should do.
                 .perform(
                         //the get method and the path passed in as a parameter is used to indicate the
                         // HTTP method and the url path used to make request
@@ -35,7 +35,6 @@ public class TestingWebServices {
                 .andExpect(status().isOk())
                 //test that this response has a body that contains a "Hello Back" String
                 .andExpect(content().string(containsString("Hello Back")));
-
     }
 
     @Test
