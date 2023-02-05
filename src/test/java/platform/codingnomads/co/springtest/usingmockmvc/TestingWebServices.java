@@ -27,7 +27,7 @@ public class TestingWebServices {
                 //.perform is used to indicate what mockMvc should do.
                 .perform(
                         //the get method and the path passed in as a parameter is used to indicate the
-                        // HTTP method and the url path used to make request
+                        // HTTP method and the url path used to make request.
                         get("/hello"))
                 //print the response
                 .andDo(print())
