@@ -61,7 +61,7 @@ public class MovieControllerTest {
     @Order(1)
     public void testGetAllMoviesSuccess() throws Exception {
 
-        //set up get request for all recipe endpoint
+        //set up get request for all recipe endpoint.
         this.mockMvc.perform(get("/all"))
                 .andDo(print())
                 //expect status is 200 OK
