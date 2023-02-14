@@ -183,6 +183,16 @@ public class MovieControllerTest {
     }
 
     @Test
+    public void testgetMoviesByMinimumRatingFailureBehavior() throws Exception {
+        when(movieService.getMoviesWithMinimumRating(anyDouble())).thenThrow(new Exception("No movies could be found with that minimum rating."));
+
+        this.mockMvc.perform(get("/movies/9.5"))
+                .andDo(print())
+                .andExpect(status().isNotFound())
+                .andExpect(content().string(containsString("No movies could be found with that minimum rating.")));
+    }
+
+    @Test
     @Order(6)
     public void testGetAllMoviesFailure() throws Exception {
 
