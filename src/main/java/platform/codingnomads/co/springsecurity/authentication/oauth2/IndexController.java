@@ -15,7 +15,6 @@ public class IndexController {
         }
         return "oauth2/index";
     }
-
     @GetMapping("/protected")
     public String getProtectedPage(Authentication authentication) {
         if (authentication != null) {
