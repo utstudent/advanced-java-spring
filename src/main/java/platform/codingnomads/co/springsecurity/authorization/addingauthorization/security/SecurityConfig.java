@@ -28,6 +28,8 @@ public class SecurityConfig {
                     .antMatchers("/superu").hasRole("SUPERU")
                     //only allow users with an UPDATER authority to update users.
                     .antMatchers("/update-user").hasAuthority("UPDATER")
+                        .antMatchers("/updater").hasAuthority("UPDATER")
+                        .antMatchers("/car").hasAuthority("ROLE_ADMIN")
                     //make sure that all others requests require authentication.
                     .anyRequest().authenticated())
                 //use HttpBasic authentication for /update-user, withDefaults() allows you to chain the next method

@@ -9,6 +9,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String homePage() {
+
         return "authorization/home";
     }
 
@@ -26,6 +27,20 @@ public class HomeController {
     @PreAuthorize("#id != 1")
     public String testMas(int id){
         return "authorization/home";
+    }
+
+    @GetMapping("/updater")
+    public String updatePage() {
+        return "practice";
+    }
+
+    @GetMapping("/car")
+    public String carPage() {
+        return "cars";
+    }
+    @GetMapping("/subjects")
+    public String subjectsPage() {
+        return "subjects";
     }
 
     /*
