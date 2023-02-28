@@ -4,6 +4,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.annotation.security.RolesAllowed;
+
 @Controller
 public class HomeController {
 
@@ -30,15 +32,18 @@ public class HomeController {
     }
 
     @GetMapping("/updater")
+    @RolesAllowed("SUPERU")
     public String updatePage() {
         return "practice";
     }
 
     @GetMapping("/car")
+    @RolesAllowed("ADMIN")
     public String carPage() {
         return "cars";
     }
     @GetMapping("/subjects")
+
     public String subjectsPage() {
         return "subjects";
     }
