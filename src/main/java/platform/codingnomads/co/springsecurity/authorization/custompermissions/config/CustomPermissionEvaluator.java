@@ -11,7 +11,6 @@ import java.util.List;
 
 @Component
 public class CustomPermissionEvaluator implements PermissionEvaluator {
-
     // better suited for @PostAuthorize as we have access to the return object
     @Override
     public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {
