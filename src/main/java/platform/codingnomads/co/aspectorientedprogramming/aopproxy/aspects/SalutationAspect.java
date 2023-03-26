@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class SalutationAspect {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(SalutationAspect.class);
 
     @AfterReturning(pointcut = "execution(* platform.codingnomads.co.aspectorientedprogramming.aopproxy.services." +
