@@ -11,4 +11,6 @@ public class SpringSecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().anyRequest();
     }
+
+    
 }
