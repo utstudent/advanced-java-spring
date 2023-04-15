@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class GreetingServiceAspect {
-
-
     @Pointcut(value = "execution(* platform.codingnomads.co.aspectorientedprogramming.lab.service.GreetingService.*(..))")
     private void allGreetingServiceMethods() { }
 
