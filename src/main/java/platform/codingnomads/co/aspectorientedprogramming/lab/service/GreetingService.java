@@ -14,4 +14,6 @@ public class GreetingService {
     public String salute(){
         return "I salute you, Spring Developer!";
     }
+
+
 }
