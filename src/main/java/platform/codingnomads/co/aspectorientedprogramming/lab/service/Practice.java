@@ -1,30 +1,28 @@
 package platform.codingnomads.co.aspectorientedprogramming.lab.service;
 
-import java.text.DecimalFormat;
 
 public class Practice {
 
     public static void main(String[] args) {
 
 
-        String answer = seriesSum(58);
-        System.out.println(answer);
+        //int answer = GetSum(-1,2);
+        //System.out.println(answer);
 
 
     }
 
-    public static String seriesSum(int n) {
-        // Happy Coding ^_^
-        if (n==0) {
-            return "0.00";
-        }
-        double sum = 1.00;
-        int increment = 3;
+    public static String disemvowel(String str) {
+        // Code away...
 
-        for (int i = 0 ; i<=n-2; i++) {
-            sum = sum + (double) 1/((i+1)+increment);
-            increment += 2;
+        str.
+        char[] vowels = {'a','e', 'i', 'o', 'u'};
+
+        for (int i = 0; i< str.length(); i++) {
+           // if (str.charAt(i).matches);
         }
-        return String.format("%.2f", sum);
     }
+
+
+
 }
